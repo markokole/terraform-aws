@@ -15,7 +15,7 @@ docker push markokole/terraformer
 ```
 
 ```bash
-docker run -itd --name terraformer --env-file "aws_cred/credentials" markokole/terraformer
+docker run -itd --name terraformer --env-file "aws/credentials" markokole/terraformer
 ```
 
 ```bash
