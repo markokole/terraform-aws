@@ -8,7 +8,7 @@ ARG TERRAFORM_VERSION=0.12.24
 
 USER root
 
-RUN apk add ansible wget unzip
+RUN apk add ansible wget unzip curl
 
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -P /tmp
 
