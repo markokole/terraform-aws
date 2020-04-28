@@ -1,0 +1,19 @@
+FROM alpine:latest
+LABEL maintainer marko
+
+ARG AWS_ACCESS_KEY_ID=""
+ARG AWS_SECRET_ACCESS_KEY=""
+
+ARG TERRAFORM_VERSION=0.12.24
+
+USER root
+
+RUN apk add ansible wget unzip
+
+RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -P /tmp
+
+RUN unzip /tmp/terraform*.zip -d /usr/bin/ && rm -f /tmp/terraform*.zip
+
+RUN pip3 install --upgrade pip && pip3 install awscli --upgrade
+
+VOLUME /local-git
