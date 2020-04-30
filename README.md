@@ -3,7 +3,7 @@
 
 Rename the aws/credentials.template to /aws/credentials and add key and secret. Change the region accordingly.
 
-The container has volume */local-git* which can be used to map local folder to that folder in the contianer.
+The container has volume */local-git* which can be used to map local folder to that folder in the container.
 
 
 ```bash
