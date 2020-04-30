@@ -8,12 +8,12 @@ ARG TERRAFORM_VERSION=0.12.24
 
 USER root
 
-RUN apk add ansible wget unzip curl
+RUN apk add wget unzip curl python3
 
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -P /tmp
 
 RUN unzip /tmp/terraform*.zip -d /usr/bin/ && rm -f /tmp/terraform*.zip
 
-RUN pip3 install --upgrade pip && pip3 install awscli --upgrade
+RUN pip3 install --upgrade pip && pip3 install awscli
 
 VOLUME /local-git
