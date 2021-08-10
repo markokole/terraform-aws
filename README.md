@@ -3,15 +3,17 @@
 The container has volume */local-git* which can be used to map local folder to that folder in the container. The idea is to execute the code from the container while writing code in the IDE of your choice. (Perhaps this only applies Windows users?)
 
 ```bash
-docker build --file Dockerfile-terraform --tag=markokole/terraformer --build-arg TERRAFORM_VERSION=1.0.3 .
+docker build --file Dockerfile-terraform --tag=markokole/terraformer:1.0.3 --build-arg TERRAFORM_VERSION=1.0.3 .
 ```
+
+Make sure to use the Terraform version as a tag as well!
 
 ## Push the image to the dockerhub
 
  **Make sure nå sensitive information is in the image!**
 
 ```bash
-docker push markokole/terraformer
+docker push markokole/terraformer:1.0.3
 ```
 
 ## Test the image locally
