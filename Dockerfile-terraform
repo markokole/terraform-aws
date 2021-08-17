@@ -3,12 +3,12 @@ LABEL maintainer marko
 
 ARG TERRAFORM_VERSION
 
-RUN apk add wget unzip curl python3 py3-pip
+RUN apk add wget unzip curl python3 py3-pip git
 
 RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -P /tmp
 
 RUN unzip /tmp/terraform*.zip -d /usr/bin/ && rm -f /tmp/terraform*.zip
 
-RUN pip3 install --upgrade pip && pip3 install awscli
+RUN pip3 install --upgrade pip --user && pip3 install awscli --user
 
 VOLUME /local-git
